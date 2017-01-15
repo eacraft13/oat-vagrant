@@ -1,0 +1,11 @@
+# Clear
+
+alias cl='clear'
+
+
+# Movement
+
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+
