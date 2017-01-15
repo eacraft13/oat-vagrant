@@ -1,11 +1,10 @@
 Creates a prepacked vagrant base box to use for Tao development.
 
 - Ubuntu Trusty 64 (14.04)
-???- PHP 7.0
-???- Apache 2.4
-???- MySQL 5.7
-???- Node 7.4
-???- Ruby 2.3
+- PHP 7.1
+- Apache 2.4
+- MySQL 5.5
+- NVM & RVM
 
 
 #### Instructions to create a vagrant box

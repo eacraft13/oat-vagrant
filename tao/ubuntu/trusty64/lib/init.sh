@@ -36,6 +36,9 @@ sudo apt-get -y -qq install mysql-server
 
 # PHP
 
+sudo apt-get -y -qq install python-software-properties
+sudo add-apt-repository -y ppa:ondrej/php
+sudo apt-get -qq update
 sudo apt-get -y -qq install php php-gd php-mysql php-tidy php-curl php-mbstring php-zip php-xml php-xml-parser
 
 
