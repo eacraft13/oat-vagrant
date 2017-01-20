@@ -39,7 +39,10 @@ sudo apt-get -y -qq install mysql-server
 sudo apt-get -y -qq install python-software-properties
 sudo add-apt-repository -y ppa:ondrej/php
 sudo apt-get -qq update
-sudo apt-get -y -qq install php php-gd php-mysql php-tidy php-curl php-mbstring php-zip php-xml php-xml-parser
+sudo apt-get -y -qq install php5.6 php5.6-gd php5.6-mysql php5.6-tidy php5.6-curl php5.6-mbstring php5.6-zip php5.6-xml php-xml-parser
+
+sudo a2dismod php7.0 ; sudo a2enmod php5.6 ; sudo service apache2 restart # Set php5.6 for Apache
+sudo update-alternatives --set php /usr/bin/php5.6 # Set php5.6 for CLI
 
 
 # Git
