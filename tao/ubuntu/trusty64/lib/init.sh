@@ -4,6 +4,11 @@ sudo apt-get -qq update
 sudo apt-get -y -qq upgrade
 
 
+# Create directory for synced files
+mkdir /var/data
+export VAR_DIR="/var/data"
+
+
 # Make swap memory
 
 sudo dd if=/dev/zero of=/var/swap.1 bs=1M count=1024
@@ -18,7 +23,8 @@ sudo apt-get -y -qq install apache2
 sudo mkdir /var/www/taoplatform
 sudo gpasswd -a "$USER" www-data
 
-sudo ln -s /vagrant/lib/taoplatform.conf /etc/apache2/sites-available/
+sudo cp /vagrant/lib/taoplatform.conf $VAR_DIR/taoplatform.conf
+sudo ln -s $VAR_DIR/taoplatform.conf /etc/apache2/sites-available/taoplatform.conf
 sudo a2ensite taoplatform
 sudo service apache2 reload
 sudo a2enmod rewrite
@@ -101,14 +107,16 @@ npm install --global eslint
 
 # Vim
 
-ln -s /vagrant/lib/vimrc $HOME/.vimrc
+cp /vagrant/lib/vimrc $VAR_DIR/vimrc
+ln -s $VAR_DIR/vimrc $HOME/.vimrc
 git clone https://github.com/VundleVim/Vundle.vim.git $HOME/.vim/bundle/Vundle.vim
 vim +PluginInstall +qall
 
 
 # bashrc & aliases
 
-ln -s /vagrant/lib/bash_aliases $HOME/.bash_aliases
+cp /vagrant/lib/bash_aliases $VAR_DIR/bash_aliases
+ln -s $VAR_DIR/bash_aliases $HOME/.bash_aliases
 
 
 # Misc.
