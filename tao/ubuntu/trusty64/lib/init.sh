@@ -5,7 +5,7 @@ sudo apt-get -y -qq upgrade
 
 
 # Create directory for synced files
-mkdir /var/data
+sudo mkdir /var/data
 export VAR_DIR="/var/data"
 
 
@@ -107,7 +107,7 @@ npm install --global eslint
 
 # Vim
 
-cp /vagrant/lib/vimrc $VAR_DIR/vimrc
+sudo cp /vagrant/lib/vimrc $VAR_DIR/vimrc
 ln -s $VAR_DIR/vimrc $HOME/.vimrc
 git clone https://github.com/VundleVim/Vundle.vim.git $HOME/.vim/bundle/Vundle.vim
 vim +PluginInstall +qall
@@ -115,7 +115,7 @@ vim +PluginInstall +qall
 
 # bashrc & aliases
 
-cp /vagrant/lib/bash_aliases $VAR_DIR/bash_aliases
+sudo cp /vagrant/lib/bash_aliases $VAR_DIR/bash_aliases
 ln -s $VAR_DIR/bash_aliases $HOME/.bash_aliases
 
 
