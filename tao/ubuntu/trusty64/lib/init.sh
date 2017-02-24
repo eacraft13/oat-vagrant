@@ -5,8 +5,18 @@ sudo apt-get -y -qq upgrade
 
 
 # Create directory for synced files
+
 sudo mkdir /var/data
 export VAR_DIR="/var/data"
+
+
+# Bash
+
+sudo cp /vagrant/lib/bash_aliases $VAR_DIR/bash_aliases
+sudo cp /vagrant/lib/bashrc $VAR_DIR/bashrc
+ln -s $VAR_DIR/bash_aliases $HOME/.bash_aliases
+ln -s $VAR_DIR/bashrc $HOME/.bashrc
+source $HOME/.bashrc
 
 
 # Make swap memory
