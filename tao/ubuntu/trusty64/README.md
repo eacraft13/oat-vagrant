@@ -11,6 +11,6 @@ Creates a prepacked vagrant base box to use for Tao development.
 
 - `$ vagrant init ubuntu/trusty64`
 - `$ vagrant up`
-- `$ vagrant ssh -c 'source /vagrant/lib/init.sh'`
+- `$ vagrant ssh -c 'source /vagrant/init.sh'`
 - `$ vagrant package --output tao-ubuntu-trusty64.box`
 - `$ vagrant box add tao/ubuntu/trusty64 tao-ubuntu-trusty64.box`
