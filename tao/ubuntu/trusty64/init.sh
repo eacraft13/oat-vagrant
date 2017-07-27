@@ -23,6 +23,13 @@ sudo apt-get -y -qq install apache2
 sudo mkdir /var/www/taoplatform
 sudo gpasswd -a "$USER" www-data
 
+sudo a2enmod ssl
+sudo service apache2 restart
+
+sudo mkdir /etc/apachd2/ssl
+sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/apache2/ssl/apache.key -out /etc/apache2/ssl/apache.crt
+# Common Name => 'taoplatform'
+
 sudo cp /vagrant/lib/taoplatform.conf /etc/apache2/sites-available/taoplatform.conf
 sudo a2ensite taoplatform
 sudo service apache2 reload
