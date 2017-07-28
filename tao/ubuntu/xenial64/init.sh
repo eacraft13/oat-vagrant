@@ -52,7 +52,7 @@ sudo apt-get -y -qq install mysql-server
 
 # PHP
 
-sudo apt-get -y -qq install php php-gd php-mysql php-tidy php-curl php-mbstring php-zip php-xml php-mcrypt php-xml-parser
+sudo apt-get -y -qq install php libapache2-mod-php php-gd php-mysql php-tidy php-curl php-mbstring php-zip php-xml php-mcrypt php-xml-parser
 
 
 # Node
